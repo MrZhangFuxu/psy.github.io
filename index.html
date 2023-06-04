@@ -40,7 +40,7 @@
 		function getMdFiles() {
 			let fileList = [];
 			let request = new XMLHttpRequest(); 
-			request.open("GET", "./", false);
+			request.open("GET", "md/", false);
 			request.send(null);
 			let dom = document.createElement("div");
 			dom.innerHTML = request.responseText;
