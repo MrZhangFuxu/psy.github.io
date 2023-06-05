@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>文章列表</title>
+	<title>文献搜索</title>
 	<style>
 		body {
 			font-family: Arial, Helvetica, sans-serif;
@@ -31,44 +31,105 @@
 	</style>
 </head>
 <body>
-	<h1>文章列表</h1>
+	<div style="margin:0 auto;width:90%;background-color:#F5F5F7;border:1px solid #D7D8D9;text-align:center;">
+<a href="https://www.shsmu.top" style="display:inline-block;padding:15px;color:#007AFF;font-size:24px;font-weight:bold;text-decoration:none;outline:none;" target="_blank">返回首页</a>
+</div>
+<style>
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.styled-link {
+display: inline-block;
+padding: 15px;
+margin: 10px 5px;
+font-size: 24px;
+font-weight: bold;
+text-decoration: none;
+color: #007AFF;
+background-color: #F5F5F7;
+border: 1px solid #D7D8D9;
+border-radius: 4px;
+/* 添加鼠标悬浮时的效果 */
+box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+.styled-link:hover {
+text-decoration: none; /* 去除鼠标悬浮时的下划线 */
+transform: translate(-2px, -1px);
+box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
+}
+.apple-font-style {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.database-container {
+margin:0 auto;
+width:90%;
+background-color: #F5F5F7;
+text-align: center;
+margin-bottom: 20px;
+border-radius: 4px;
+}
+.database-container h2 {
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+margin: 0;
+padding: 15px;
+font-size: 24px;
+font-weight: bold;
+color: #5a5a5a;
 
-	<ul id="fileList"></ul>
+border-bottom: 1px solid #D7D8D9;
+border-radius: 3px 3px 0 0;
+}
+</style>
+<div style="margin:0 0px 0 0px; text-align:center;>
 
-	<script>
-		// 获取指定目录下的所有 .md 文件名
-		function getMdFiles() {
-			let fileList = [];
-			let request = new XMLHttpRequest(); 
-			request.open("GET", "/md/", false);
-			request.send(null);
-			let dom = document.createElement("div");
-			dom.innerHTML = request.responseText;
-			let links = dom.getElementsByTagName("a");
-			for(let i=0; i<links.length; i++) {
-				let link = links[i].getAttribute("href");
-				if(link.endsWith(".md")) {
-					fileList.push(link);
-				}
-			}
-			return fileList;
-		}
+<p class="has-medium-font-size">
+ <a rel="noreferrer noopener" href="https://www.shsmuso.top/" target="_blank" class="styled-link">本站谷歌搜索</a>    
 
-		// 在页面中生成文件列表
-		function displayMdFiles() {
-			let fileList = getMdFiles();
-			let ul = document.getElementById("fileList");
-			for(let i=0; i<fileList.length; i++) {
-				let li = document.createElement("li");
-				let a = document.createElement("a");
-				a.href = fileList[i];
-			    a.innerHTML = fileList[i];
-			    li.appendChild(a);
-			    ul.appendChild(li);
-			}
-		}
+<a rel="noreferrer noopener" href="http://www.so.shsmuso.top/" target="_blank" class="styled-link">谷歌学术</a> 
 
-		displayMdFiles();
-	</script>
+<a rel="noreferrer noopener" href="https://xueshu.baidu.com/" target="_blank" class="styled-link">百度学术</a>  
+ <a rel="noreferrer noopener" href="http://var.scholarpedia.org/article/Main_Page" target="_blank" class="styled-link">学术百科</a>   
+ <a rel="noreferrer noopener" href="https://plato.stanford.edu/index.html" target="_blank" class="styled-link">斯坦福哲学百科</a>   
+ <a rel="noreferrer noopener" href="https://www.sciencedirect.com/topics/" target="_blank" class="styled-link">爱思唯尔词典</a>   
+  <a rel="noreferrer noopener" href="https://www.zotero.org/" target="_blank" class="styled-link">Zotero文献管理</a> 
+  <a href="https://zh.annas-archive.org/" target="_blank" rel="noreferrer noopener" class="styled-link">安娜的档案（书籍下载）</a></p>
+
+<div class="database-container">
+<h2>文献数据库</h2>
+</div>
+
+
+<p class="has-medium-font-size"><a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noreferrer noopener" class="styled-link">PubMed</a>    <a rel="noreferrer noopener" href="https://www.sciencedirect.com/" target="_blank" class="styled-link">爱思唯尔</a>    <a rel="noreferrer noopener" href="https://www.embase.com/" target="_blank" class="styled-link">荷兰医学文摘（Embase）（需权限）</a>    <a rel="noreferrer noopener" href="https://www.webofscience.com/wos/woscc/basic-search" target="_blank" class="styled-link">Web of Science（需权限）</a>  <a rel="noreferrer noopener" href="https://www.wolterskluwer.com/en/solutions/ovid" target="_blank" class="styled-link">Ovid</a>    <a rel="noreferrer noopener" href="http://www2.bg.am.poznan.pl/czasopisma/medicus.php?lang=eng" target="_blank" class="styled-link">期刊简写查询</a></p>
+
+<div class="database-container"><h2>国外站点</h2></div>
+
+<p class="has-medium-font-size"><a rel="noreferrer noopener" href="https://icd.who.int/en" target="_blank" class="styled-link">ICD-11官网</a>    <a rel="noreferrer noopener" href="https://www.apa.org/" target="_blank" class="styled-link">美国心理学家协会（APA）</a>    <a href="https://www.psychiatry.org/" target="_blank" rel="noreferrer noopener" class="styled-link">美国精神病学协会（APA）</a>    <a rel="noreferrer noopener" href="https://www.nice.org.uk/guidance/published?ndt=Guidance&amp;ndt=Quality%20standard" target="_blank" class="styled-link">英国国家卫生与临床优化研究所（NICE）</a>   <a rel="noreferrer noopener" href="https://clinicaltrials.gov/ct2/home" target="_blank" class="styled-link">ClinicalTrials</a>    <a rel="noreferrer noopener" href="https://www.repository.cam.ac.uk/" target="_blank" class="styled-link">剑桥大学知识库</a>    <a rel="noreferrer noopener" href="https://www.cambridge.org/core/" target="_blank" class="styled-link">剑桥核心数据库</a>    <a rel="noreferrer noopener" href="https://academic.oup.com/" target="_blank" class="styled-link">牛津大学出版社</a>    <a rel="noreferrer noopener" href="https://guidelines.ebmportal.com/" target="_blank" class="styled-link">国际指南协作网（GIN）</a>    <a rel="noreferrer noopener" href="https://www.cochranelibrary.com" target="_blank" class="styled-link">Cochrane 图书馆</a>   <a rel="noreferrer noopener" href="https://www.ecri.org/" target="_blank" class="styled-link">美国急救医学研究所（ECRI）</a>   <a rel="noreferrer noopener" href="https://www.ahrq.gov/gam/index.html" target="_blank" class="styled-link">美国卫生保健研究与质量管理处（AHRQ）</a>    <a rel="noreferrer noopener" href="https://www.sign.ac.uk/our-guidelines/" target="_blank" class="styled-link">苏格兰校际指南网络(SIGN)</a>    <a rel="noreferrer noopener" href="https://joulecma.ca/cpg/homepage" target="_blank" class="styled-link">加拿大医学会临床实践指南信息库（CPG）</a>    <a rel="noreferrer noopener" href="https://www.nhmrc.gov.au/guidelines" target="_blank" class="styled-link">临床指南的指南</a>    <a rel="noreferrer noopener" href="https://www.who.int/zh" target="_blank" class="styled-link">世界卫生组织（WHO）</a>    <a rel="noreferrer noopener" href="https://www.clinicalkey.com/#!/" target="_blank" class="styled-link">Clinical Key(需权限)</a></p>
+<div class="database-container"><h2>国内站点</h2></div>
+
+<p class="has-medium-font-size"><a rel="noreferrer noopener" href="https://guide.medlive.cn/" target="_blank" class="styled-link">医脉通</a>    <a rel="noreferrer noopener" href="http://seleguide.yiigle.com/home/zhinan" target="_blank" class="styled-link">中华医学知识库（需权限）</a>    <a rel="noreferrer noopener" href="http://med.wanfangdata.com.cn/" target="_blank" class="styled-link">万方医学网（需权限）</a>    <a rel="noreferrer noopener" href="https://www.cnki.net/" target="_blank" class="styled-link">知网（需权限）</a>  <a rel="noreferrer noopener" href="http://www.sinomed.ac.cn/index.jsp" target="_blank" class="styled-link">SinoMed（需权限）</a></p>
+<div class="database-container"><h2>SciHub</h2></div>
+
+<p class="has-medium-font-size"><a rel="noreferrer noopener" href="http://sci-hub.ren/" target="_blank" class="styled-link">入口1</a>    <a rel="noreferrer noopener" href="http://sci-hub.shop" target="_blank" class="styled-link">入口2</a>    <a rel="noreferrer noopener" href="http://sci-hub.wf" target="_blank" class="styled-link">入口3</a>    <a rel="noreferrer noopener" href="http://sci-hub.ee/" target="_blank" class="styled-link">入口4</a>    <a rel="noreferrer noopener" href="https://sci-hub.se/" target="_blank" class="styled-link">入口5（推荐）</a></p>
+<div class="database-container"><h2>AI专区</h2></div>
+
+<p class="has-medium-font-size"><a rel="noreferrer noopener" href="https://www.wetab.link/" target="_blank" class="styled-link">WebTab(导航)</a> ←(<a rel="noreferrer noopener" href="https://www.shsmu.top/?p=17591" target="_blank" class="styled-link">ChatGPT插件安装教程</a>)   <a rel="noreferrer noopener" href="https://www.shsmu.top/?p=17595" target="_blank" class="styled-link">Monica-ChatGPT(Chrome插件) </a>  <a href="https://www.shsmu.top/?p=17638" target="_blank" rel="noreferrer noopener" class="styled-link">ChatGPTwindows安装版 </a>  <a rel="noreferrer noopener" href="https://gamma.app/signup?r=7alrt9ooibao8xz" target="_blank" class="styled-link">Gamma（PPT/文档/网页制作）</a>    <a rel="noreferrer noopener" href="https://prompthero.com/" target="_blank" class="styled-link">PromptHero(AI提示词搜索)</a>    <a rel="noreferrer noopener" href="https://chat.openai.com/chat" target="_blank" class="styled-link">ChatGPT</a>    <a rel="noreferrer noopener" href="https://www.jasper.ai/" target="_blank" class="styled-link">JasperAI（写文案）</a>   <a rel="noreferrer noopener" href="https://jenni.ai/" target="_blank" class="styled-link">JenniAI（写论文）</a> <a rel="noreferrer noopener" href="https://copysmith.ai/" target="_blank" class="styled-link">Copysmith（写文案）</a></p>
+</div>
+</div>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b4556c441cc738d4126e6e5d31cacda2";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+
+
+
+	
 </body>
 </html>
