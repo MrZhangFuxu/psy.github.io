@@ -1,122 +1,173 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>文献搜索</title>
+	<title>雨日青精神空间</title>
+	<link rel="shortcut icon" href="https://www.shsmu.top/wp-content/uploads/2023/06/undraw_pic_profile_re_7g2h.svg">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<style>
-		body {
-			font-family: Arial, Helvetica, sans-serif;
-			line-height: 1.6;
-			padding: 0 10px;
-		}
-		h1 {
-			font-size: 2rem;
-			text-align: center;
-			padding: 20px 0;
-		}
-		ul {
-			list-style: none;
-			padding-left: 0;
-		}
-		li {
-			margin-bottom: 5px;
-		}
-		a {
-			color: #333;
-			text-decoration: none;
-		}
-		a:hover {
-			text-decoration: underline;
-		}
+	.card-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: center;
+	    max-width: 800px;
+	    margin: 0 auto;
+	}
+	.front,
+	.back {
+	    position: absolute;
+	    width: 100%;
+	    height: 100%;
+	    backface-visibility: hidden;
+	    transition: transform 0.6s;
+	    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	    border-radius: 0px;
+	}
+	.front {
+	    color: white;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	    transform-origin: top center;
+	    transform: rotateY(0deg);
+	    /* 添加不同的背景图片 */
+	    background-size: cover;
+	    background-repeat: no-repeat;
+	}
+
+	
+
+  	/* 定义卡片大小，插入------------------------------------*/
+	.card {
+	    width: 150px;
+	    height: 150px; /* 调整高度以适应另起一行的按钮 */
+	    perspective: 1000px;
+	    margin: 10px;
+	}
+
+	.cardheader {
+	    width: 660px;
+	    height: 50px; /* 调整高度以适应另起一行的按钮 */
+	    perspective: 1000px;
+	    margin: 10px;
+	}
+	
+	.cardfooter {
+	    width: 660px;
+	    height: 50px; /* 调整高度以适应另起一行的按钮 */
+	    perspective: 1000px;
+	    margin: 10px;
+	}
+
+	.cardmain {
+	    width: 320px;
+	    height: 150px; /* 调整高度以适应另起一行的按钮 */
+	    perspective: 1000px;
+	    margin: 10px;
+	}
+
+	.cardside {
+	    width: 150px;
+	    height: 150px; /* 调整高度以适应另起一行的按钮 */
+	    perspective: 1000px;
+	    margin: 10px;
+	}
+
+
+
+
+
+  	/* 定义背景图片，插入---------------------------------------*/
+  	.card .front {
+	         background-color: #0078D7;
+	}
+  	
+	.cardmain .front {
+		    background-image: url('https://www.shsmu.top/wp-content/uploads/2023/06/heyou.svg');
+		    background-color: #0078D7;
+	}
+	
+	.cardheader .front {
+	    background-image: url('');
+	    background-color: white;
+	}
+	
+
+	.carddaily .front {
+	    background-image: url('https://www.shsmu.top/wp-content/uploads/2023/06/医学看板.svg');
+	    background-color: #0078D7;
+	}
+
+	.cardfile .front {
+	    background-image: url('https://www.shsmu.top/wp-content/uploads/2023/06/无文件.svg');
+	    background-color: #0078D7;
+	}
+
+	.cardso .front {
+	    background-image: url('https://www.shsmu.top/wp-content/uploads/2023/06/undraw_going_offline_ihag.svg');
+	    background-color: #0078D7;
+	}
+
+	.cardshare .front {
+	    background-image: url('https://www.shsmu.top/wp-content/uploads/2023/06/暂无分享.svg');
+	    background-color: #0078D7;
+	}
+
+	.cardassess .front {
+	    background-image: url('https://www.shsmu.top/wp-content/uploads/2023/06/成功.svg');
+	    background-color: #0078D7;
+	}
+
+	.cardteam .front {
+	    background-image: url('https://www.shsmu.top/wp-content/uploads/2023/06/团队.svg');
+	    background-color: #0078D7;
+	}
+
+	.cardus .front {
+	    background-image: url('https://www.shsmu.top/wp-content/uploads/2023/06/无消息1.svg');
+	    background-color: #0078D7;
+	}
+
+
+
+
+
+	/* 定义翻转*/
+
+	.cardfilp:hover .front {
+	    transform: rotateY(180deg);
+	}
+	
+	.cardfilp:hover .back {
+	    transform: rotateY(0deg);
+	}
+
+	.back {
+	    background-color: #EAEAEA;
+	    color: #333;
+	    display: flex;
+	    flex-direction: column; /* 将按钮另起一行 */
+	    align-items: center; /* 按钮垂直居中 */
+	    transform-origin: bottom center;
+	    transform: rotateY(180deg);
+	    box-sizing: border-box;
+	    padding: 10px;
+	}
+
+
+	.back button {
+	    background-color: #0078D7;
+	    color: white;
+	    padding: 10px 20px;
+	    border: none;
+	    border-radius: 5px;
+	    font-size: 14px;
+	    cursor: pointer;
+	    margin-top: 10px; /* 调整按钮与卡片内容的间距 */
+	}
 	</style>
-</head>
-<body>
-	<div style="margin:0 auto;width:90%;background-color:#F5F5F7;border:1px solid #D7D8D9;text-align:center;">
-<a href="https://www.shsmu.top" style="display:inline-block;padding:15px;color:#007AFF;font-size:24px;font-weight:bold;text-decoration:none;outline:none;" target="_blank">返回首页</a>
-</div>
-<style>
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.styled-link {
-display: inline-block;
-padding: 15px;
-margin: 10px 5px;
-font-size: 24px;
-font-weight: bold;
-text-decoration: none;
-color: #007AFF;
-background-color: #F5F5F7;
-border: 1px solid #D7D8D9;
-border-radius: 4px;
-/* 添加鼠标悬浮时的效果 */
-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
-transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-}
-.styled-link:hover {
-text-decoration: none; /* 去除鼠标悬浮时的下划线 */
-transform: translate(-2px, -1px);
-box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.25);
-}
-.apple-font-style {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-.database-container {
-margin:0 auto;
-width:90%;
-background-color: #F5F5F7;
-text-align: center;
-margin-bottom: 20px;
-border-radius: 4px;
-}
-.database-container h2 {
-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-margin: 0;
-padding: 15px;
-font-size: 24px;
-font-weight: bold;
-color: #5a5a5a;
-
-border-bottom: 1px solid #D7D8D9;
-border-radius: 3px 3px 0 0;
-}
-</style>
-<div style="margin:0 0px 0 0px; text-align:center;>
-
-<p class="has-medium-font-size">
- <a rel="noreferrer noopener" href="https://www.shsmuso.top/" target="_blank" class="styled-link">本站谷歌搜索</a>    
-
-<a rel="noreferrer noopener" href="http://www.so.shsmuso.top/" target="_blank" class="styled-link">谷歌学术</a> 
-
-<a rel="noreferrer noopener" href="https://xueshu.baidu.com/" target="_blank" class="styled-link">百度学术</a>  
- <a rel="noreferrer noopener" href="http://var.scholarpedia.org/article/Main_Page" target="_blank" class="styled-link">学术百科</a>   
- <a rel="noreferrer noopener" href="https://plato.stanford.edu/index.html" target="_blank" class="styled-link">斯坦福哲学百科</a>   
- <a rel="noreferrer noopener" href="https://www.sciencedirect.com/topics/" target="_blank" class="styled-link">爱思唯尔词典</a>   
-  <a rel="noreferrer noopener" href="https://www.zotero.org/" target="_blank" class="styled-link">Zotero文献管理</a> 
-  <a href="https://zh.annas-archive.org/" target="_blank" rel="noreferrer noopener" class="styled-link">安娜的档案（书籍下载）</a></p>
-
-<div class="database-container">
-<h2>文献数据库</h2>
-</div>
-
-
-<p class="has-medium-font-size"><a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank" rel="noreferrer noopener" class="styled-link">PubMed</a>    <a rel="noreferrer noopener" href="https://www.sciencedirect.com/" target="_blank" class="styled-link">爱思唯尔</a>    <a rel="noreferrer noopener" href="https://www.embase.com/" target="_blank" class="styled-link">荷兰医学文摘（Embase）（需权限）</a>    <a rel="noreferrer noopener" href="https://www.webofscience.com/wos/woscc/basic-search" target="_blank" class="styled-link">Web of Science（需权限）</a>  <a rel="noreferrer noopener" href="https://www.wolterskluwer.com/en/solutions/ovid" target="_blank" class="styled-link">Ovid</a>    <a rel="noreferrer noopener" href="http://www2.bg.am.poznan.pl/czasopisma/medicus.php?lang=eng" target="_blank" class="styled-link">期刊简写查询</a></p>
-
-<div class="database-container"><h2>国外站点</h2></div>
-
-<p class="has-medium-font-size"><a rel="noreferrer noopener" href="https://icd.who.int/en" target="_blank" class="styled-link">ICD-11官网</a>    <a rel="noreferrer noopener" href="https://www.apa.org/" target="_blank" class="styled-link">美国心理学家协会（APA）</a>    <a href="https://www.psychiatry.org/" target="_blank" rel="noreferrer noopener" class="styled-link">美国精神病学协会（APA）</a>    <a rel="noreferrer noopener" href="https://www.nice.org.uk/guidance/published?ndt=Guidance&amp;ndt=Quality%20standard" target="_blank" class="styled-link">英国国家卫生与临床优化研究所（NICE）</a>   <a rel="noreferrer noopener" href="https://clinicaltrials.gov/ct2/home" target="_blank" class="styled-link">ClinicalTrials</a>    <a rel="noreferrer noopener" href="https://www.repository.cam.ac.uk/" target="_blank" class="styled-link">剑桥大学知识库</a>    <a rel="noreferrer noopener" href="https://www.cambridge.org/core/" target="_blank" class="styled-link">剑桥核心数据库</a>    <a rel="noreferrer noopener" href="https://academic.oup.com/" target="_blank" class="styled-link">牛津大学出版社</a>    <a rel="noreferrer noopener" href="https://guidelines.ebmportal.com/" target="_blank" class="styled-link">国际指南协作网（GIN）</a>    <a rel="noreferrer noopener" href="https://www.cochranelibrary.com" target="_blank" class="styled-link">Cochrane 图书馆</a>   <a rel="noreferrer noopener" href="https://www.ecri.org/" target="_blank" class="styled-link">美国急救医学研究所（ECRI）</a>   <a rel="noreferrer noopener" href="https://www.ahrq.gov/gam/index.html" target="_blank" class="styled-link">美国卫生保健研究与质量管理处（AHRQ）</a>    <a rel="noreferrer noopener" href="https://www.sign.ac.uk/our-guidelines/" target="_blank" class="styled-link">苏格兰校际指南网络(SIGN)</a>    <a rel="noreferrer noopener" href="https://joulecma.ca/cpg/homepage" target="_blank" class="styled-link">加拿大医学会临床实践指南信息库（CPG）</a>    <a rel="noreferrer noopener" href="https://www.nhmrc.gov.au/guidelines" target="_blank" class="styled-link">临床指南的指南</a>    <a rel="noreferrer noopener" href="https://www.who.int/zh" target="_blank" class="styled-link">世界卫生组织（WHO）</a>    <a rel="noreferrer noopener" href="https://www.clinicalkey.com/#!/" target="_blank" class="styled-link">Clinical Key(需权限)</a></p>
-<div class="database-container"><h2>国内站点</h2></div>
-
-<p class="has-medium-font-size"><a rel="noreferrer noopener" href="https://guide.medlive.cn/" target="_blank" class="styled-link">医脉通</a>    <a rel="noreferrer noopener" href="http://seleguide.yiigle.com/home/zhinan" target="_blank" class="styled-link">中华医学知识库（需权限）</a>    <a rel="noreferrer noopener" href="http://med.wanfangdata.com.cn/" target="_blank" class="styled-link">万方医学网（需权限）</a>    <a rel="noreferrer noopener" href="https://www.cnki.net/" target="_blank" class="styled-link">知网（需权限）</a>  <a rel="noreferrer noopener" href="http://www.sinomed.ac.cn/index.jsp" target="_blank" class="styled-link">SinoMed（需权限）</a></p>
-<div class="database-container"><h2>SciHub</h2></div>
-
-<p class="has-medium-font-size"><a rel="noreferrer noopener" href="http://sci-hub.ren/" target="_blank" class="styled-link">入口1</a>    <a rel="noreferrer noopener" href="http://sci-hub.shop" target="_blank" class="styled-link">入口2</a>    <a rel="noreferrer noopener" href="http://sci-hub.wf" target="_blank" class="styled-link">入口3</a>    <a rel="noreferrer noopener" href="http://sci-hub.ee/" target="_blank" class="styled-link">入口4</a>    <a rel="noreferrer noopener" href="https://sci-hub.se/" target="_blank" class="styled-link">入口5（推荐）</a></p>
-<div class="database-container"><h2>AI专区</h2></div>
-
-<p class="has-medium-font-size"><a rel="noreferrer noopener" href="https://www.wetab.link/" target="_blank" class="styled-link">WebTab(导航)</a> ←(<a rel="noreferrer noopener" href="https://www.shsmu.top/?p=17591" target="_blank" class="styled-link">ChatGPT插件安装教程</a>)   <a rel="noreferrer noopener" href="https://www.shsmu.top/?p=17595" target="_blank" class="styled-link">Monica-ChatGPT(Chrome插件) </a>  <a href="https://www.shsmu.top/?p=17638" target="_blank" rel="noreferrer noopener" class="styled-link">ChatGPTwindows安装版 </a>  <a rel="noreferrer noopener" href="https://gamma.app/signup?r=7alrt9ooibao8xz" target="_blank" class="styled-link">Gamma（PPT/文档/网页制作）</a>    <a rel="noreferrer noopener" href="https://prompthero.com/" target="_blank" class="styled-link">PromptHero(AI提示词搜索)</a>    <a rel="noreferrer noopener" href="https://chat.openai.com/chat" target="_blank" class="styled-link">ChatGPT</a>    <a rel="noreferrer noopener" href="https://www.jasper.ai/" target="_blank" class="styled-link">JasperAI（写文案）</a>   <a rel="noreferrer noopener" href="https://jenni.ai/" target="_blank" class="styled-link">JenniAI（写论文）</a> <a rel="noreferrer noopener" href="https://copysmith.ai/" target="_blank" class="styled-link">Copysmith（写文案）</a></p>
-</div>
-</div>
-<script>
+	
+	  <script>
 var _hmt = _hmt || [];
 (function() {
   var hm = document.createElement("script");
@@ -125,11 +176,136 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-
-
-
-
-
 	
+	
+</head>
+<body>
+    
+ 	<div class="card-container">   
+    		<div class="cardheader">
+		    <div class="front" onclick="flipCard(this)">
+		        <h2  style="color:#0078D7" >雨日青精神空间</h2>
+		    </div>
+		</div>
+    </div>
+    
+
+	<div class="card-container">
+
+
+		<div class="cardmain cardfilp">
+		    <div class="front" onclick="flipCard(this)">
+		        <h2  style="color:#FFF" >主页</h2>
+		    </div>
+		    <div class="back" onclick="flipCard(this)">
+		        <p>致力于分享精神病学与心理学知识</p>
+		       <a rel="noreferrer noopener" href="https://www.shsmu.top/" target="_blank" style="color:white;text-decoration: none;"> <button>点击进入</button></a>
+		    </div>
+		</div>
+
+
+		<div class="card cardso cardfilp">
+		    <div class="front" onclick="flipCard(this)">
+		        <h2 style="background-color: #0078D7;">&nbsp;&nbsp;学术搜索&nbsp;&nbsp;</h2>
+		    </div>
+		    <div class="back" onclick="flipCard(this)">
+		        <p>好用的学术搜索</p>
+		       <a rel="noreferrer noopener" href="https://shsmu.top/so/" target="_blank" style="color:white;text-decoration: none;"><button>点击进入</button></a>
+		    </div>
+		</div>
+
+
+		<div class="card cardshare cardfilp">
+		    <div class="front" onclick="flipCard(this)">
+		        <h2 style="background-color: #0078D7;">&nbsp;&nbsp;文献导航&nbsp;&nbsp;</h2>
+		    </div>
+		    <div class="back" onclick="flipCard(this)">
+		        <p>好用的文献导航</p>
+		       <a rel="noreferrer noopener" href="https://www.shsmu.top/so/so.html" target="_blank" style="color:white;text-decoration: none;"><button>点击进入</button></a>
+		    </div>
+		</div>
+
+
+		<div class="cardside carddaily cardfilp">
+		    <div class="front" onclick="flipCard(this)">
+		        <h2   style="background-color: #0078D7;" >每日一题</h2>
+		    </div>
+		    <div class="back" onclick="flipCard(this)">
+		        <p>每日做一题，聚沙成塔</p>
+		       <a rel="noreferrer noopener" href="https://www.shsmu.top/?p=15196" target="_blank" style="color:white;text-decoration: none;"><button>点击进入</button></a>
+		    </div>
+		</div>
+
+		<div class="card cardfile cardfilp">
+		    <div class="front" onclick="flipCard(this)">
+		        <h2 style="background-color: #0078D7;">&nbsp;&nbsp;文件快传&nbsp;&nbsp;</h2>
+		    </div>
+		    <div class="back" onclick="flipCard(this)">
+		        <p>好用的云盘</p>
+		       <a rel="noreferrer noopener" href="https://shsmu.top/Space/" target="_blank" style="color:white;text-decoration: none;"><button>点击进入</button></a>
+		    </div>
+		</div>
+
+
+
+
+
+		<div class="card cardassess cardfilp">
+		    <div class="front" onclick="flipCard(this)">
+		        <h2 style="background-color: #0078D7;"> &nbsp;&nbsp;&nbsp;心理评估&nbsp;&nbsp;  &nbsp;</h2>
+		    </div>
+		    <div class="back" onclick="flipCard(this)">
+		        <p>免费又好用的心理评估系统</p>
+		       <a rel="noreferrer noopener" href="https://shsmu.top/assess/html/" target="_blank" style="color:white;text-decoration: none;"><button>点击进入</button></a>
+		    </div>
+		</div>
+
+
+		<div class="card cardteam cardfilp">
+		    <div class="front" onclick="flipCard(this)">
+		        <h2 style="background-color: #0078D7;">心理援助热线</h2>
+		    </div>
+		    <div class="back" onclick="flipCard(this)">
+		        <p>全国心理援助电话</p>
+		       <a rel="noreferrer noopener" href="https://hope6.cn" target="_blank" style="color:white;text-decoration: none;"><button>点击进入</button></a>
+		    </div>
+		</div>
+
+		<div class="card cardus cardfilp">
+		    <div class="front" onclick="flipCard(this)">
+		        <h2 style="background-color: #0078D7;">&nbsp;&nbsp;联系我们&nbsp;&nbsp;</h2>
+		    </div>
+		    <div class="back" onclick="flipCard(this)">
+		        <p>欢迎随时与我们联系</p>
+		       <a rel="noreferrer noopener" href="https://www.shsmu.top/?page_id=16973" target="_blank" style="color:white;text-decoration: none;"><button>点击进入</button></a>
+		    </div>
+		</div>
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+ 	<div class="card-container">   
+    		<div class="cardfooter">
+		    <div class="front" onclick="flipCard(this)">
+		        <p style="color:gray;">@2023雨日青精神空间</p>
+		    </div>
+		</div>
+    </div>
+
+
+	<script>
+		function flipCard(element) {
+			element.parentElement.classList.toggle("flipped");
+		}
+	</script>
 </body>
 </html>
